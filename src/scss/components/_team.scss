@@ -1,0 +1,239 @@
+.team {
+  margin: 0 0 $spacer * 2;
+  background-color: $white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+
+  &__top {
+    display: flex;
+    padding-left: 0;
+  }
+
+  &__place {
+    padding-top: $spacer * 4;
+    padding-right: $spacer / 2;
+
+    &__number {
+      @extend .font-size-12;
+
+      padding: $spacer / 2 $spacer * 1.625;
+      border-radius: 0 100vh 100vh 0;
+
+      color: $gray-200;
+      background-color: $blue-500;
+
+      &--podium {
+        background-color: $blue-500;
+      }
+    }
+  }
+
+  &__details {
+    flex: 1;
+    padding: $spacer * 2;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacer * 2;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: $spacer * 2;
+
+      width: 100%;
+
+      @include media-breakpoint-up('sm') {
+        flex: 1;
+        width: auto;
+      }
+    }
+  }
+
+  &__header {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    gap: inherit;
+
+    &__crest {
+      width: $icon-size-lg;
+      height: $icon-size-lg;
+      border: $border-width solid $border-color;
+      border-radius: $border-radius-full;
+
+      &.skeleton {
+        border: none;
+      }
+    }
+
+    &__name {
+      @extend .font-size-16;
+
+      margin-bottom: 0;
+      font-weight: $font-weight-semibold;
+      color: $gray-900;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+
+      &.skeleton {
+        max-width: 8.75rem;
+        min-height: 1.5rem;
+        width: 100%;
+      }
+    }
+  }
+
+  &__stats {
+    width: 100%;
+
+    @include media-breakpoint-up('sm') {
+      display: flex;
+      align-items: center;
+      gap: $spacer * 2;
+
+      &:has(.skeleton) {
+        display: block;
+      }
+    }
+
+    @include media-breakpoint-up('md') {
+      display: block;
+      flex: 1;
+    }
+
+    @include media-breakpoint-up('lg') {
+      display: flex !important;
+    }
+
+    &__bar {
+      display: flex;
+      align-items: center;
+      flex: 1;
+
+      height: 0.25rem;
+      margin-bottom: $spacer;
+      margin-left: auto;
+
+      border-radius: 100vh;
+      overflow: hidden;
+
+      @include media-breakpoint-up('sm') {
+        &:not(.skeleton) {
+          margin-bottom: 0;
+        }
+      }
+
+      @include media-breakpoint-up('md') {
+        margin-bottom: $spacer;
+      }
+
+      @include media-breakpoint-up('lg') {
+        margin-bottom: 0;
+        max-width: 14.125rem;
+      }
+
+      &.skeleton {
+        height: 0.75rem;
+      }
+    }
+
+    &__filler {
+      height: 100%;
+    }
+
+    &__details {
+      @extend .font-size-14;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: $spacer * 2;
+      color: $gray-700;
+
+      &.skeleton {
+        height: 0.75rem;
+        max-width: 114px;
+        width: 100%;
+        margin-left: auto;
+
+        @include media-breakpoint-up('lg') {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__points {
+    @extend .font-size-18;
+
+    min-width: 9rem;
+    margin-left: auto;
+
+    &.skeleton {
+      height: 3.5rem;
+      max-width: 9rem;
+      width: 100%;
+    }
+  }
+
+  &__bottom {
+    overflow: auto;
+
+    padding: $spacer $spacer * 2;
+    border-top: $border-width solid $border-color;
+
+    display: grid;
+    grid-template-columns: minmax(13.75rem, 21.25rem) repeat(3, minmax(10rem, 3fr));
+    gap: $spacer;
+
+    @include media-breakpoint-up('md') {
+      grid-template-columns: minmax(21.25rem, 21.25rem) repeat(3, minmax(10rem, 3fr));
+    }
+
+    &__label {
+      @extend .font-size-12;
+
+      font-weight: $font-weight-normal;
+      color: $gray-700;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: $spacer;
+    text-align: center;
+
+    &__list {
+      @extend .font-size-12;
+
+      color: $gray-700;
+      font-weight: $font-weight-bold;
+
+      display: flex;
+      align-items: center;
+      gap: $spacer / 2;
+    }
+
+    &__item {
+      flex: none;
+
+      width: 1.25rem;
+      height: 1.25rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      line-height: 1;
+      border-radius: $border-radius-full;
+    }
+  }
+}

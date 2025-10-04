@@ -1,0 +1,100 @@
+// Insert typography styles here
+@font-face {
+  font-family: 'Inter';
+  src: url('../../fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 400 700; /* zakres wag */
+  font-style: normal;
+  font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-top: 0;
+  margin-bottom: $spacer * 2;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h3,
+.h3 {
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-lg;
+}
+
+ul,
+ol {
+  padding-left: 0;
+}
+
+ul:not([role='list']),
+ol:not([role='list']) {
+  li {
+    margin: 0 0 $spacer $spacer * 2.5;
+
+    &::marker {
+      color: rgba($gray-900, 0.6);
+    }
+  }
+}
+
+b {
+  font-weight: $font-weight-semibold;
+}
+
+code {
+  background: rgba($blue-500, 0.15);
+  padding: $spacer * 0.25 $spacer / 2;
+  border-radius: $border-radius * 0.25;
+  font-size: 90%;
+}
+
+a {
+  transition: $transition-base color;
+  text-decoration: none;
+  font-weight: $font-weight-bold;
+  color: $blue-600;
+
+  &:hover {
+    color: $blue-500;
+  }
+}
+
+.font-size {
+  &-12 {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  &-14 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  &-16 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  &-18 {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  &-32 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}

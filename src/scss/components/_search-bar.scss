@@ -1,0 +1,35 @@
+.search-bar {
+  position: relative;
+
+  @include element('input') {
+    @extend .font-size-16;
+
+    width: 100%;
+    padding: calc($spacer - 0.125rem) $spacer * 2;
+    padding-right: 3.125rem;
+
+    border: $border-width solid $border-color;
+    border-radius: 0.5rem;
+
+    color: $gray-900;
+    background-color: $white;
+
+    &::placeholder {
+      color: $gray-700;
+    }
+  }
+
+  @include element('icon') {
+    position: absolute;
+    right: 1rem;
+    bottom: 50%;
+
+    line-height: 1;
+    transform: translateY(calc(50% + 0.0625rem));
+    pointer-events: none;
+
+    @include modifier('filled') {
+      pointer-events: all;
+    }
+  }
+}

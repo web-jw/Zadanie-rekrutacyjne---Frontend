@@ -1,0 +1,25 @@
+.bg {
+  &--win {
+    background-color: $teal-500;
+  }
+
+  &--draw {
+    background-color: $gray-400;
+  }
+
+  &--lose {
+    background-color: $red-500;
+  }
+}
+
+.rounded {
+  border-radius: $border-radius;
+
+  &--sm {
+    border-radius: $border-radius-sm;
+  }
+
+  &--full {
+    border-radius: $border-radius-full;
+  }
+}
