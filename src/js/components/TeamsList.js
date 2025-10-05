@@ -6,13 +6,12 @@ class TeamsList extends HTMLElement {
   teams = [];
   searched = '';
   fetching = true;
-  fetched = false;
-  error = false;
+  error = true;
 
   partials = {
     empty: (type) => {
       const text = {
-        error: 'There was a problem. Please try again later.',
+        error: `There was a problem. Please try ${this.fetching ? 'scrolling' : 'again later'}.`,
         notFound: `No teams found matching "${this.searched}"`,
       };
 
@@ -65,7 +64,7 @@ class TeamsList extends HTMLElement {
     const table = this.querySelector('.teams__table');
     table.innerHTML = '';
 
-    if (this.fetching) {
+    if (this.fetching && !this.searched.length) {
       return table.append(...this.partials.placeholders());
     }
 
