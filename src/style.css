@@ -204,6 +204,10 @@ li {
   border-radius: 100%;
 }
 
+.none-events {
+  pointer-events: none;
+}
+
 body {
   background: #f8fafc;
   color: #0f172a;
@@ -1350,10 +1354,10 @@ a:hover {
   bottom: 50%;
   line-height: 1;
   transform: translateY(calc(50% + 0.0625rem));
-  pointer-events: none;
-}
-.search-bar__icon--filled {
-  pointer-events: all;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  background: none;
 }
 
 .badge {
@@ -1410,10 +1414,11 @@ a:hover {
 .team__place__number {
   padding: 0.25rem 0.8125rem;
   border-radius: 0 100vh 100vh 0;
-  color: #e2e8f0;
-  background-color: #4a6cf7;
+  color: #0f172a;
+  background-color: #e2e8f0;
 }
 .team__place__number--podium {
+  color: #e2e8f0;
   background-color: #4a6cf7;
 }
 .team__details {
@@ -1568,13 +1573,15 @@ a:hover {
 }
 .team__form {
   display: grid;
-  grid-template-columns: 40px 1fr;
+  grid-template-columns: minmax(40px, auto) 1fr;
   gap: 0.5rem;
   text-align: center;
+  align-items: center;
 }
 .team__form__list {
   color: #334155;
   font-weight: 700;
+  margin: 0;
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -1596,6 +1603,7 @@ a:hover {
   margin-inline: auto;
   margin-bottom: 1rem;
   letter-spacing: -0.01em;
+  min-height: calc(100vh - 48px);
 }
 .teams__header {
   display: flex;
@@ -1646,6 +1654,8 @@ a:hover {
   padding: 1.5rem;
   font-weight: 400;
   gap: 1rem;
+  text-align: center;
+  word-break: break-all;
 }
 
 .task-page {

@@ -6,7 +6,9 @@
 
   letter-spacing: -0.01em;
 
-  &__header {
+  min-height: calc(100vh - 48px);
+
+  @include element('header') {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +30,7 @@
       border-radius: 0 0 $border-radius $border-radius;
     }
 
-    &__heading {
+    @include element('heading') {
       @extend .font-size-32;
 
       margin-bottom: 0px;
@@ -36,7 +38,7 @@
       color: $gray-900;
     }
 
-    &__search {
+    @include element('search') {
       width: 100%;
       padding: $spacer;
       background-color: $blue-200;
@@ -47,14 +49,14 @@
       }
     }
 
-    &__icon {
+    @include element('icon') {
       @include media-breakpoint-up('md') {
         display: none;
       }
     }
   }
 
-  &__empty {
+  @include element('empty') {
     box-shadow: $shadow;
     border-radius: $border-radius;
     background-color: white;
@@ -62,5 +64,7 @@
     padding: $spacer * 3;
     font-weight: $font-weight-normal;
     gap: $spacer * 2;
+    text-align: center;
+    word-break: break-all;
   }
 }

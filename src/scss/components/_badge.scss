@@ -11,11 +11,11 @@
 
   gap: $spacer / 2;
 
-  &--col {
+  @include modifier('col') {
     flex-direction: column;
   }
 
-  &--highlight {
+  @include modifier('highlight') {
     padding: $spacer;
     color: $white;
     background-color: $blue-500;

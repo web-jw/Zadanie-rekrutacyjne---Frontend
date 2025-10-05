@@ -1,13 +1,13 @@
 .bg {
-  &--win {
+  @include modifier('win') {
     background-color: $teal-500;
   }
 
-  &--draw {
+  @include modifier('draw') {
     background-color: $gray-400;
   }
 
-  &--lose {
+  @include modifier('lose') {
     background-color: $red-500;
   }
 }
@@ -15,11 +15,15 @@
 .rounded {
   border-radius: $border-radius;
 
-  &--sm {
+  @include modifier('sm') {
     border-radius: $border-radius-sm;
   }
 
-  &--full {
+  @include modifier('full') {
     border-radius: $border-radius-full;
   }
+}
+
+.none-events {
+  pointer-events: none;
 }

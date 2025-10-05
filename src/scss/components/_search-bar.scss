@@ -26,10 +26,10 @@
 
     line-height: 1;
     transform: translateY(calc(50% + 0.0625rem));
-    pointer-events: none;
+    cursor: pointer;
 
-    @include modifier('filled') {
-      pointer-events: all;
-    }
+    padding: 0;
+    border: 0;
+    background: none;
   }
 }

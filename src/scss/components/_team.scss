@@ -4,31 +4,32 @@
   border-radius: $border-radius;
   box-shadow: $shadow;
 
-  &__top {
+  @include element('top') {
     display: flex;
     padding-left: 0;
   }
 
-  &__place {
+  @include element('place') {
     padding-top: $spacer * 4;
     padding-right: $spacer / 2;
 
-    &__number {
+    @include element('number') {
       @extend .font-size-12;
 
       padding: $spacer / 2 $spacer * 1.625;
       border-radius: 0 100vh 100vh 0;
 
-      color: $gray-200;
-      background-color: $blue-500;
+      color: $gray-900;
+      background-color: $gray-200;
 
-      &--podium {
+      @include modifier('podium') {
+        color: $gray-200;
         background-color: $blue-500;
       }
     }
   }
 
-  &__details {
+  @include element('details') {
     flex: 1;
     padding: $spacer * 2;
 
@@ -37,7 +38,7 @@
     flex-wrap: wrap;
     gap: $spacer * 2;
 
-    &__container {
+    @include element('container') {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -52,14 +53,14 @@
     }
   }
 
-  &__header {
+  @include element('header') {
     flex: 1;
 
     display: flex;
     align-items: center;
     gap: inherit;
 
-    &__crest {
+    @include element('crest') {
       width: $icon-size-lg;
       height: $icon-size-lg;
       border: $border-width solid $border-color;
@@ -70,7 +71,7 @@
       }
     }
 
-    &__name {
+    @include element('name') {
       @extend .font-size-16;
 
       margin-bottom: 0;
@@ -90,7 +91,7 @@
     }
   }
 
-  &__stats {
+  @include element('stats') {
     width: 100%;
 
     @include media-breakpoint-up('sm') {
@@ -112,7 +113,7 @@
       display: flex !important;
     }
 
-    &__bar {
+    @include element('bar') {
       display: flex;
       align-items: center;
       flex: 1;
@@ -144,11 +145,11 @@
       }
     }
 
-    &__filler {
+    @include element('filler') {
       height: 100%;
     }
 
-    &__details {
+    @include element('details') {
       @extend .font-size-14;
 
       display: flex;
@@ -170,7 +171,7 @@
     }
   }
 
-  &__points {
+  @include element('points') {
     @extend .font-size-18;
 
     min-width: 9rem;
@@ -183,7 +184,7 @@
     }
   }
 
-  &__bottom {
+  @include element('bottom') {
     overflow: auto;
 
     padding: $spacer $spacer * 2;
@@ -197,7 +198,7 @@
       grid-template-columns: minmax(21.25rem, 21.25rem) repeat(3, minmax(10rem, 3fr));
     }
 
-    &__label {
+    @include element('label') {
       @extend .font-size-12;
 
       font-weight: $font-weight-normal;
@@ -205,24 +206,26 @@
     }
   }
 
-  &__form {
+  @include element('form') {
     display: grid;
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: minmax(40px, auto) 1fr;
     gap: $spacer;
     text-align: center;
+    align-items: center;
 
-    &__list {
+    @include element('list') {
       @extend .font-size-12;
 
       color: $gray-700;
       font-weight: $font-weight-bold;
+      margin: 0;
 
       display: flex;
       align-items: center;
       gap: $spacer / 2;
     }
 
-    &__item {
+    @include element('item') {
       flex: none;
 
       width: 1.25rem;
